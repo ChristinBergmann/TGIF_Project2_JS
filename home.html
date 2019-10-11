@@ -4,12 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home TGIF</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
 
+<body>
   <header class="container">
 
     <nav>
@@ -18,25 +19,38 @@
           <source srcset="..." type="image/svg+xml">
           <img src="..." class="img-fluid img-thumbnail" alt="...">
         </picture>
-
         <a class="p-2 flex-grow-1 bd-highlight" href="#">TGIF</a>
         <img src="..." class="rounded float-right" alt="...">
         <a class="p-2 bd-highlight" href=mailto:info@tgif.net>info@tgif.net</a>
       </div>
 
       <div class="p-3 mb-2 bg-secondary text-dark" .bg-secondary>
+
         <a href="home.html">Home</a>
-        <a href="#">Congress 113</a>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Attendance</button>
+          aria-haspopup="true" aria-expanded="false">
+          Congress 113 </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="senate.html">Senate</a>
-          <a class="dropdown-item active" href="house.html">House</a>
+          <a class="dropdown-item" href="house.html">House</a>
         </div>
-        <a href="#">Party Loyalty</a>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Attendance </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="attendance-senate.html">Senate</a>
+          <a class="dropdown-item" href="attendance-house.html">House</a>
+        </div>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Party Loyalty </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="loyalty-senate.html">Senate</a>
+          <a class="dropdown-item" href="loyalty-house.html">House</a>
+        </div>
+
       </div>
     </nav>
-
   </header>
 
   <div class="container">
@@ -106,7 +120,7 @@
   </main>
 
   <footer class="container">
-    <div class="d-flex justify-content-center  p-2 m-3 bg-secondary text-dark" .bg-secondary>
+    <div class="d-flex justify-content-center p-3 mb-2 bg-secondary text-dark" .bg-secondary>
       <p>"c" TGIF || All Rights Reserved</p>
     </div>
   </footer>
