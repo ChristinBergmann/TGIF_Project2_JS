@@ -7,14 +7,14 @@ function addDATA() {
 
   for (var i = 0; i < members.length; i++) {
     if (members[i].middle_name === null) {
-      members[i].middle_name = "";
+      members[i].middle_name = " ";
     }
     var fullName =
       members[i].last_name +
-        "," +
-        members[i].first_name +
-        " " +
-        members[i].middle_name || "";
+      "," +
+      members[i].first_name +
+      " " +
+      members[i].middle_name || " ";
     var party = members[i].party;
     var state = members[i].state;
     var seniority = members[i].seniority;

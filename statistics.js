@@ -71,7 +71,7 @@ function getNum() {
   rowD.appendChild(colvotD); //says that third cell belongs to first row
   tbody.appendChild(rowD); //says that first row belongs to tbody element with the id above listed
 
-//   console.log(rowD);
+  //   console.log(rowD);
 
   var rowR = document.createElement("tr");
   var colnamR = document.createElement("td");
@@ -111,24 +111,84 @@ function getNum() {
 }
 getNum();
 
-var dataVotes = [];
+
+
+//¡¡¡¡LEAST   VOTING  CALC by MissedVotes ¡¡¡¡¡¡¡//
 
 function getPercentage() {
+  var tbody = document.getElementById("leastEngaged");
+
+  var leastData = [];
+  var cutLeastData = [];
+  var resultsLeastData = [];
+  // var fullName = members[i].last_name + "," + members[i].first_name + " " + members[i].middle_name || " ";
+
+  // sort;
+  //¡¡¡¡¡ GETTING ONLY THE PROPERTIES/DATA I WILL NEED IN A NEW ARRY/OBJ ¡¡¡¡¡¡¡//
+
   for (var i = 0; i < members.length; i++) {
-    dataVotes.push({
-      fullName:
-        members[i].last_name +
-          "," +
-          members[i].first_name +
-          " " +
-          members[i].middle_name || "",
+    if (members[i].middle_name === null) {
+      members[i].middle_name = " ";
+    };
+    leastData.push({
+      fullName: members[i].last_name +
+        "," +
+        members[i].first_name +
+        " " +
+        members[i].middle_name || " ",
       numMissedVotes: members[i].missed_votes,
       perMissedVotes: members[i].missed_votes_pct
     });
   }
-  dataVotes.sort(function(a, b) {
-    return a.value - b.value;
+  console.log(leastData);
+
+  leastData.sort(function (x, y) {
+    // if (sort == "least") {
+    return y.perMissedVotes - x.perMissedVotes; //sorts doubles nums out
+    // } else if (sort = "most") {
+    //   return x.perMissedVotes - y.perMissedVotes;
+    // });
   });
-  console.log(dataVotes);
+
+  for (var i = 0; i < leastData.length - 1; i += 1) {
+    if (leastData[i].perMissedVotes != leastData[i + 1].perMissedVotes) { //runs through my out-sorted leastData and pushes highest to lowest in cutLeastData//
+      cutLeastData.push(leastData[i].perMissedVotes); //and pushes highest to lowest in cutLeastData
+    }
+  }
+  // console.log(cutLeastData);
+
+  for (var i = 0; i < leastData.length; i++) {
+    if (leastData[i].perMissedVotes >= cutLeastData[9]) { //runs again through my sorted leastData and
+      resultsLeastData.push(leastData[i]); //only pushes lower num than my 10TH in arr into resultsLeastData
+    }
+  }
+
+  // console.log(resultsLeastData);
+
+  // // least
+  // var sort = "least";
+  // getPercentage(members, sort);
+  // // most
+  // var sort = "most";
+
+  //¡¡¡ CREATING THE TABLE ¡¡¡//
+
+  var row = document.createElement("tr");
+  var col1 = document.createElement("td");
+  var col2 = document.createElement("td");
+  var col3 = document.createElement("td");
+
+  col1.innerHTML = resultsLeastData.fullName;
+  col2.innerHTML = resultsLeastData.numMissedVotes;
+  col3.innerHTML = resultsLeastData.perMissedVotes;
+
+  row.appendChild(col1);
+  row.appendChild(col2);
+  row.appendChild(col3);
+  tbody.appendChild(row);
+
+  console.log(resultsLeastData);
+
 }
+
 getPercentage();
