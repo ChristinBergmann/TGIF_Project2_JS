@@ -23,35 +23,44 @@
                 <a class="p-2 bd-highlight" href=mailto:info@tgif.net>info@tgif.net</a>
             </div>
 
-            <div class="p-3 mb-2 bg-secondary text-dark" .bg-secondary>
+
+            <div class="p-3 mb-2 bg-secondary text-dark d-flex">
                 <div class="dropdown">
-                    <a href="home.html">Home</a>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="home.html"><button class="btn btn-secondary">Home</button></a>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Congress 113 </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="senate.html">Senate</a>
                         <a class="dropdown-item" href="house.html">House</a>
                     </div>
+                </div>
 
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" id="attendance-dropdown">
                         Attendance </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" aria-labelledby="attendance-dropdown">
                         <a class="dropdown-item" href="attendance-senate.html">Senate</a>
                         <a class="dropdown-item" href="attendance-house.html">House</a>
                     </div>
+                </div>
 
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Party Loyalty </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="loyalty-senate.html">Senate</a>
                         <a class="dropdown-item" href="loyalty-house.html">House</a>
                     </div>
                 </div>
-            </div>
 
+            </div>
+            </div>
         </nav>
     </header>
 
@@ -73,7 +82,7 @@
                 device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if
                 present) cast the tiebreaking vote.</p>
 
-            <div class="container">
+            <div>
                 <h2>Senate at a glance</h2>
                 <table class="table table-hover">
                     <thead>
@@ -89,7 +98,7 @@
                 </table>
             </div>
 
-            <div class="container">
+            <div>
                 <h2>Least Engaged (Bottom 10% Attendance)</h2>
                 <table class="table table-hover">
                     <thead>
@@ -105,7 +114,7 @@
                 </table>
             </div>
 
-            <div class="container">
+            <div>
                 <h2>Most Engaged (Top 10% Attendance)</h2>
                 <table class="table table-hover">
                     <thead>
