@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Attendance House</title>
+    <title>Loyalty House</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -23,35 +23,44 @@
                 <a class="p-2 bd-highlight" href=mailto:info@tgif.net>info@tgif.net</a>
             </div>
 
-            <div class="p-3 mb-2 bg-secondary text-dark" .bg-secondary>
+
+            <div class="p-3 mb-2 bg-secondary text-dark d-flex">
                 <div class="dropdown">
-                    <a href="home.html">Home</a>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="home.html"><button class="btn btn-secondary">Home</button></a>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Congress 113 </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="senate.html">Senate</a>
                         <a class="dropdown-item" href="house.html">House</a>
                     </div>
+                </div>
 
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" id="attendance-dropdown">
                         Attendance </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" aria-labelledby="attendance-dropdown">
                         <a class="dropdown-item" href="attendance-senate.html">Senate</a>
                         <a class="dropdown-item" href="attendance-house.html">House</a>
                     </div>
+                </div>
 
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Party Loyalty </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="loyalty-senate.html">Senate</a>
                         <a class="dropdown-item" href="loyalty-house.html">House</a>
                     </div>
                 </div>
-            </div>
 
+            </div>
+            </div>
         </nav>
     </header>
 
@@ -60,138 +69,56 @@
     <main class="container">
         <!--Table container-->
         <div>
-            <h2>Attendance</h2>
-            <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house.
-                Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in
-                most
-                cases, debates continue even if a majority is not present.</p>
+            <h2>Party Loyalty</h2>
+            <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans
+                respectively, tend to be the most faithful in voting for their party's nominee for office and
+                legislation that backs their party's agenda. </p>
 
-            <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating
-                "aye"
-                or "no" when his or her name is announced. The House reserves roll-call votes for the most formal
-                matters,
-                as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic
-                device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if
-                present) cast the tiebreaking vote.</p>
+            <div>
+                <h2>House at a glance</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Party</th>
+                            <th>Number of Reps</th>
+                            <th>% Voted with Prty</th>
+                        </tr>
+                    </thead>
+                    <tbody id="glance">
 
-            <h2>Senate at a glance</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Party</th>
-                        <th>Number of Reps</th>
-                        <th>% Voted with Prty</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Republican</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>Democrat</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>Independent</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number of Missed Votes</th>
+                            <th>% Missed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leastEngagedLoyal">
 
-            <h2>Least Engaged (Bottom 10% Attendance)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Most Engaged (Top 10% Attendance)</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number of Missed Votes</th>
+                            <th>% Missed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mostEngagedLoyal">
 
-            <h2>Most Engaged (Top 10% Attendance)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of Missed Votes</th>
-                        <th>% Missed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                    <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </main>
