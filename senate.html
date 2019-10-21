@@ -75,18 +75,25 @@
         judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other
         federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
 
-      <div class="d-flex bd-highlight mb-3">
-        <p>Filter by Party: <label class="p-2 bd-highlight"><input type="checkbox" id="R" value="R">Republican</label>
-          <label class="p-2 bd-highlight"><input type="checkbox" id="D" value="D">Democrat</label>
-          <label class="p-2 bd-highlight"><input type="checkbox" id="I" value="I">Independant</label>
-          <label class="ml-auto p-2 bd-highlight" for="sel1">Select by State:</label>
-          <select class="ml-auto p-2 bd-highlight">
-            <option>All</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+      <div class="d-flex bd-highlight mb-3 filter">
+        <div class="p-2 bd-highlight">
+          <label class="party-filter">Filter by Party: <input type="checkbox" id="R" name="party"
+              value="R" />Republican</label>
+        </div>
+        <div class="p-2 bd-highlight">
+          <label class="party-filter"><input type="checkbox" id="D" name="party" value="D" />Democrat</label>
+        </div>
+        <div class="p-2 bd-highlight">
+          <label class="party-filter"><input type="checkbox" id="I" name="party" value="I" />Independant</label>
+        </div>
+
+        <div class="ml-auto p-2 bd-highlight dropdown">
+          <span>Select by State:</span>
+          <select id="state-drop" multiple>
+            <option name="state">All</option>
           </select>
-        </p>
+        </div>
+
       </div>
 
       <!--Table container-->
@@ -124,8 +131,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-  <script src="./senate_pro-Congress-113.js"></script>
+  <!-- <script src="./senate_pro-Congress-113.js"></script> -->
   <!-- <script>document.getElementById("senate-data").innerHTML = JSON.stringify(data,null,2);</script> -->
+
   <script src="main.js"></script>
 </body>
 

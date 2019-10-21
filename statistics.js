@@ -9,7 +9,7 @@ var statistics = {
   votesofIndependants: 0,
   totalVotes: 0
 };
-// var bla = [];
+
 let members = data.results[0].members;
 let neededDataList = [];
 console.log(members);
@@ -143,6 +143,7 @@ getData(
   "numTotalVotes",
   "perPartyVotes"
 );
+
 function getData(tableID, arrInput, valuekey1, valuekey2, valuekey3) {
   console.log("getData started");
 
@@ -155,17 +156,16 @@ function getData(tableID, arrInput, valuekey1, valuekey2, valuekey3) {
         members[i].middle_name = " ";
       }
       fullDataList.push({
-        fullName:
-          members[i].last_name +
-            "," +
-            members[i].first_name +
-            " " +
-            members[i].middle_name || " ",
+        fullName: members[i].last_name +
+          "," +
+          members[i].first_name +
+          " " +
+          members[i].middle_name || " ",
         numMissedVotes: members[i].missed_votes,
         perMissedVotes: members[i].missed_votes_pct,
         numTotalVotes: Math.round(
           (members[i].total_votes - members[i].missed_votes) /
-            (members[i].votes_with_party_pct / 100)
+          (members[i].votes_with_party_pct / 100)
         ),
         perPartyVotes: members[i].votes_with_party_pct
       });
@@ -192,12 +192,12 @@ function getData(tableID, arrInput, valuekey1, valuekey2, valuekey3) {
   console.log("getData ended");
 }
 
-//!! GENERATED FUNC TO SORT by Ascendance !! //    // sorts highest to lowest num/value
+//!! GENERATED FUNC TO SORT by Ascendance and Descendance!! //   
 
 function sortingOrder(tableID, arrInput, valuekey3) {
   console.log("sorting Order started");
 
-  var resultSort = arrInput.sort(function(x, y) {
+  var resultSort = arrInput.sort(function (x, y) {
     if (tableID === "leastEngaged" || tableID === "mostEngagedLoyal") {
       return y[valuekey3] - x[valuekey3];
     } else {
