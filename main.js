@@ -1,5 +1,5 @@
 let data_option = "";
-
+//---- says when is which DATA to be used
 if (document.title === "Senate TGIF" || document.title === "Attendance Senate" || document.title === "Loyalty Senate") {
   data_option = "Senate"
 } else {
@@ -298,15 +298,15 @@ function getDataGlance(members) {
   voteI = 0;
 
   for (var i = 0; i < members.length; i++) {
-    if (members[i].party === "D") {
+    if (members[i].party === "D" && members[i].votes_with_party_pct >= 0) {
       numD++;
       voteD += members[i].votes_with_party_pct;
     }
-    if (members[i].party === "R") {
+    if (members[i].party === "R" && members[i].votes_with_party_pct >= 0) {
       numR++;
       voteR += members[i].votes_with_party_pct;
     }
-    if (members[i].party === "I") {
+    if (members[i].party === "I" && members[i].votes_with_party_pct >= 0) {
       numI++;
       voteI += members[i].votes_with_party_pct;
     }
@@ -318,7 +318,10 @@ function getDataGlance(members) {
 
   statistics.votesofDemocrates = voteD / numD;
   statistics.votesofRepublicans = voteR / numR;
-  statistics.votesofIndependants = voteI / numI;
+
+  if (voteI > 0 && numI > 0) {
+    statistics.votesofIndependants = voteI / numI
+  };
 
   statistics.totalNums = numD + numR + numI;
   statistics.totalVotes = (voteD + voteR + voteI) / statistics.totalNums;
