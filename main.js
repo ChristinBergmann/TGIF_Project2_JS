@@ -5,10 +5,9 @@ fetch(
         "Content-Type": "application/json",
         "X-API-KEY": "cKCio6OjfIRULirFLcBo3ZLp18UOKqZevqv2ePK4"
       }
-    }
-  ).then(response => {
-
-    console.log(response)
+    })
+  .then(response => {
+    // console.log(response)
     return response.json()
   })
   .then(data => {
@@ -16,6 +15,7 @@ fetch(
     console.log(data)
     getData(
       "senate-data",
+      fullDataList,
       "fullName",
       "party",
       "state",
@@ -25,37 +25,18 @@ fetch(
     );
     fillDropdownList();
     createEventListener(members);
-
   })
-
-
-// async function fetchData() {
-//   const response = await fetch(
-//     "https: //api.propublica.org/congress/v1/115/senate/members.json", {
-//       credentials: "include",
-//       method: "GET",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "X-API-KEY": "cKCio6OjfIRULirFLcBo3ZLp18UOKqZevqv2ePK4"
-//       }
-//     });
-//   const data = await response.json();
-//   console.log("fertiggggggg!!!!")
-//   console.log(data)
-// }
-// fetchData();
-
 
 // const members = data.results[0].members;
 // console.log(members);
+
 let fullDataList = [];
 let allMemberStateList = [];
 
 console.log(allMemberStateList)
 
 
-// GLANCE TABLE
-
+//------- GLANCE TABLE---------//
 
 function getData(
   tableID,
@@ -122,8 +103,6 @@ function buildTable(
 
   const tbody = document.getElementById(tableID);
 
-  // tbody.innerHTML = ""
-
   for (var i = 0; i < arrInput.length; i++) {
     row = document.createElement("tr");
     col1 = document.createElement("td");
@@ -162,12 +141,11 @@ function fillDropdownList() {
     option.innerHTML =
       allMemberStateList[i]
     select.appendChild(option);
-
   }
 }
 
 
-//------------------adds EVENTLISTENER + should change table when selected----------------//
+//---------------------------------adds EVENTLISTENER + should change table when selected------------------------------------------//
 
 function createEventListener(members) {
 
@@ -204,10 +182,11 @@ function filterTable(members) {
   const selectedStateValue = selectedState.map(node => node.value);
   console.log(selectedStateValue);
 
-  //--------update Table via set Filters--------------//
+
+  //---------------------update Table via set Filters--------------------//
+
   const filteredMembersList = [];
-  console.log(fullDataList)
-  console.log(checkedBoxesValues)
+
   for (var i = 0; i < fullDataList.length; i++) {
     if (checkedBoxesValues.length === 0 && selectedStateValue.length === 0) {
       filteredMembersList.push(fullDataList[i])
@@ -221,9 +200,10 @@ function filterTable(members) {
     if (checkedBoxesValues.length > 0 && checkedBoxesValues.includes(fullDataList[i].party) && selectedStateValue.length > 0 && selectedStateValue.includes(fullDataList[i].state)) {
       filteredMembersList.push(fullDataList[i])
     }
-
   }
+
   fullDataList = [];
+
   getData(
     "senate-data",
     filteredMembersList,
