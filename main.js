@@ -81,13 +81,9 @@ fetch(
 
   })
 
-// const members = data.results[0].members;
-// console.log(members);
-
 let fullDataList = [];
 let allMemberStateList = [];
-
-console.log(allMemberStateList)
+// console.log(allMemberStateList)
 
 
 //------- GLANCE TABLE---------//
@@ -344,11 +340,11 @@ function getDataGlance(members) {
   colnumD.innerHTML = statistics.numofDemocrates; //puts value in the second cell
   colvotD.innerHTML = statistics.votesofDemocrates; //puts value in the third cell
   rowD.appendChild(colnamD); //says that first cell belongs to first row
-  rowD.appendChild(colnumD); //says that second cell belongs to first row
-  rowD.appendChild(colvotD); //says that third cell belongs to first row
+  rowD.appendChild(colnumD); //..second
+  rowD.appendChild(colvotD); //..
   tbody.appendChild(rowD); //says that first row belongs to tbody element with the id above listed
 
-  //   console.log(rowD);
+  console.log(rowD);
 
   var rowR = document.createElement("tr");
   colnamR = document.createElement("td");
